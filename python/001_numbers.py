@@ -15,21 +15,22 @@ app = marimo.App()
 def _(mo):
     mo.md(
         """
-        # 🔢 Numbers
+        # 🔢 Zahlen
 
-        This tutorial provides a brief overview of working with numbers.
+        
+        Dieses Lernprogramm gibt einen kurzen Überblick über die Arbeit mit Zahlen.
 
-        ## Number Types
+        ## Zahlentypen
 
-        Python has several types of numbers:
+        Python hat mehrere Arten von Zahlen:
 
         ```python
-        integer = 42          # whole numbers (int)
-        decimal = 3.14        # floating-point numbers (float)
-        complex_num = 2 + 3j  # complex numbers
+        integer = 42 # ganze Zahlen (int)
+        decimal = 3.14 # Fließkommazahlen (float)
+        complex_num = 2 + 3j # komplexe Zahlen
         ```
 
-        Below is an example number we'll use to explore operations.
+        Im Folgenden findest du ein Zahlenbeispiel, mit dem wir die Operationen erkunden können.
         """
     )
     return
@@ -45,11 +46,11 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Basic mathematical operations
+        ## Mathematische Grundoperationen
 
-        Python supports all standard mathematical operations.
+        Python unterstützt alle mathematischen Standardoperationen.
 
-        Try changing the value of `number` above and watch how the results change.
+        Versuche den Wert von `number` oben zu ändern und beobachte, wie sich die Ergebnisse ändern.
         """
     )
     return
@@ -63,37 +64,37 @@ def _(number):
 
 @app.cell
 def _(number):
-    number - 5  # Subtraction
+    number - 5  # Subtraktion
     return
 
 
 @app.cell
 def _(number):
-    number * 3  # Multiplication
+    number * 3  # Multiplikation
     return
 
 
 @app.cell
 def _(number):
-    number / 2  # Division (always returns float)
+    number / 2  # Division (gibt immer einen float zurück)
     return
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md("""Python also has special division operators and power operations.""")
+    mo.md("""Python hat weitere Versionen von Division und Exponentiation.""")
     return
 
 
 @app.cell
 def _(number):
-    number // 5  # Floor division (rounds down)
+    number // 5  # Division (rundet ab)
     return
 
 
 @app.cell
 def _(number):
-    number % 5  # Modulus (remainder)
+    number % 5  # Modulo (Teilen mit Rest)
     return
 
 
@@ -107,9 +108,9 @@ def _(number):
 def _(mo):
     mo.md(
         """
-        ## Type conversion
+        ## Typumwandlung
 
-        You can convert between different number types. Try changing these values!
+        Du kannst zwischen verschiedenen Zahlentypen konvertieren. Versuche diese Werte zu ändern!
         """
     )
     return
@@ -123,13 +124,13 @@ def _():
 
 @app.cell
 def _(decimal_number):
-    int(decimal_number)  # Convert to integer (truncates decimal part)
+    int(decimal_number)  # In Ganzzahl umwandeln (schneidet den Dezimalteil ab)
     return
 
 
 @app.cell
 def _(number):
-    float(number)  # Convert to "float" or decimal
+    float(number)  # Umwandlung in „Float“ oder Dezimalwert
     return
 
 
@@ -137,8 +138,8 @@ def _(number):
 def _(mo):
     mo.md(
         """
-        ## Built-in math functions
-        Python provides many useful built-in functions for working with numbers:
+        ## Eingebaute mathematische Funktionen
+        Python bietet viele nützliche eingebaute Funktionen für die Arbeit mit Zahlen:
         """
     )
     return
@@ -146,25 +147,25 @@ def _(mo):
 
 @app.cell
 def _(number):
-    abs(-number)  # Absolute value
+    abs(-number)  # Betrag einer Zahl
     return
 
 
 @app.cell
 def _():
-    round(3.14159, 2)  # Round to 2 decimal places
+    round(3.14159, 2)  # Auf 2 Nachkommastellen runden
     return
 
 
 @app.cell
 def _():
-    max(1, 5, 3, 7, 2)  # Find maximum value
+    max(1, 5, 3, 7, 2)  # Bestimme das Maximum
     return
 
 
 @app.cell
 def _():
-    min(1, 5, 3, 7, 2)  # Find minimum value
+    min(1, 5, 3, 7, 2)  # Bestimme das Minimum
     return
 
 
@@ -172,9 +173,9 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Advanced operations
+        ## Erweiterte Operationen
 
-        For more complex mathematical operations, use Python's [math module](https://docs.python.org/3/library/math.html).
+        Für komplexere mathematische Operationen verwende das [math-Modul] von Python (https://docs.python.org/3/library/math.html).
         """
     )
     return
@@ -225,13 +226,13 @@ def _(math):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## Next steps:
+    ## Nächste Schritte:
 
-    - Practice different mathematical operations
-    - Experiment with type conversions
-    - Try out the math module functions
+    - Verschiedene mathematische Operationen üben
+    - Experimentieren Sie mit Typkonvertierungen
+    - Probieren Sie die Funktionen des mathematischen Moduls aus
 
-    Keep calculating! 🧮✨
+    Rechnen Sie weiter! 🧮✨
     """)
     return
 

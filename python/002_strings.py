@@ -30,12 +30,12 @@ def _(mo):
         name = 'Alice'
 
         # oder dreifache Anführungszeichen
-        mehrzeiliger_string = \„““
+        mehrzeiliger_string = \"""
         Liebe Alice,
         schön, dich kennenzulernen.
         Mit freundlichen Grüßen,
         Bob.
-        \„““
+        \"""
         ```
 
         Nachfolgend ein Beispielstring.

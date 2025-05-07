@@ -17,28 +17,28 @@ def _(mo):
         """
         # 🎭 Strings
 
-        This notebook introduces **strings**, which are containers for text.
+        In diesem Notebook werden **Strings** vorgestellt, die Container für Text sind.
 
-        ## Creating strings
-        Create strings by wrapping text in quotes:
+        ## Erstellen von Zeichenketten
+        Erzeuge Zeichenketten, indem du Text in Anführungszeichen einschließt:
 
         ```python
-        # Use double quotes
-        greeting = "Hello, Python!"
+        # Doppelte Anführungszeichen verwenden
+        greeting = „Hallo, Python!“
 
-        # or single quotes
+        # oder einfache Anführungszeichen
         name = 'Alice'
 
-        # or triple quotes
-        multiline_string = \"""
-        Dear, Alice,
-        Nice to meet you.
-        Sincerely,
+        # oder dreifache Anführungszeichen
+        mehrzeiliger_string = \„““
+        Liebe Alice,
+        schön, dich kennenzulernen.
+        Mit freundlichen Grüßen,
         Bob.
-        \"""
+        \„““
         ```
 
-        Below is an example string.
+        Nachfolgend ein Beispielstring.
         """
     )
     return
@@ -46,7 +46,7 @@ def _(mo):
 
 @app.cell
 def _():
-    text = "Python is amazing!"
+    text = "Python ist erstaunlich!"
     text
     return (text,)
 
@@ -55,12 +55,12 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Essential string operations
+        ## Wesentliche String-Operationen
 
-        Here are some methods for working with strings.
+        Hier sind einige Methoden für die Arbeit mit Zeichenketten.
 
-        Tip: Try changing the value of `text` above, and watch how the
-        computed values below change.
+        Tipp: Versuche, den Wert von `text` oben zu ändern, und beobachte, wie sich die
+        berechneten Werte unten ändern.
         """
     )
     return
@@ -68,7 +68,7 @@ def _(mo):
 
 @app.cell
 def _(text):
-    # the `len` method returns the number of characters in the string.
+    # Die Methode „len“ gibt die Anzahl der Zeichen in der Zeichenkette zurück.
     len(text)
     return
 
@@ -93,14 +93,14 @@ def _(text):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md("""Use string methods and the `in` operator to find things in strings.""")
+    mo.md("""Verwende String-Methoden und den Operator „in“, um Dinge in Strings zu finden.""")
     return
 
 
 @app.cell
 def _(text):
     # Returns the index of "is" in the string
-    text.find("is")
+    text.find("in")
     return
 
 
@@ -120,12 +120,12 @@ def _(text):
 def _(mo):
     mo.md(
         """
-        ## Inserting values in strings
+        ## Einfügen von Werten in Zeichenketten
 
-        Modern Python uses f-strings to insert values into strings. For example,
-        check out how the next cell greets you (and notice the `f''''`)!
+        Modernes Python verwendet f-strings, um Werte in Zeichenketten einzufügen. Ein Beispiel,
+        Sieh dir an, wie die nächste Zelle dich begrüßt (und beachte das `f''''`)!
 
-        **Try it!** Enter your name in `my_name` below, then run the cell.
+        **Versuche es mal!** Gib deinen Namen in `my_name` unten ein, dann führe die Zelle aus.
         """
     )
     return
@@ -139,7 +139,7 @@ def _():
 
 @app.cell
 def _(my_name):
-    f"Hello, {my_name}!"
+    f"Hallo, {my_name}!"
     return
 
 
@@ -147,8 +147,8 @@ def _(my_name):
 def _(mo):
     mo.md(
         """
-        ## Working with parts of strings
-        You can access any part of a string using its position (index):
+        ## Arbeiten mit Teilen von Zeichenketten
+        Du kannst auf jeden Teil einer Zeichenkette über seine Position (Index) zugreifen:
         """
     )
     return
@@ -186,9 +186,9 @@ def _(text):
 def _(mo):
     mo.md(
         """
-        ## Other helpful string methods
+        ## Andere hilfreiche String-Methoden
 
-        Finally, here are some other helpful string methods. Feel free to try them out on your own strings by modifying the value of `sentence` below.
+        Zum Schluss sind hier noch einige andere hilfreiche String-Methoden. Probiere ruhig an deinen eigenen Strings aus, indem du den Wert von `sentence` unten änderst.
         """
     )
     return
@@ -196,28 +196,28 @@ def _(mo):
 
 @app.cell
 def _():
-    sentence = "  python is fun  "
+    sentence = "  python macht Spaß  "
     sentence
     return (sentence,)
 
 
 @app.cell
 def _(sentence):
-    # Remove extra spaces
+    # Zusätzliche Leerzeichen entfernen
     sentence.strip()
     return
 
 
 @app.cell
 def _(sentence):
-    # Split into a list of words
+    # Aufteilung in eine Liste von Wörtern
     sentence.split()
     return
 
 
 @app.cell
 def _(sentence):
-    sentence.replace("fun", "awesome")
+    sentence.replace("Spaß", "Freude")
     return
 
 
@@ -243,9 +243,9 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        ## Next steps
+        ## Nächste Schritte
 
-        For a full primer on strings, check out the [official documentation](https://docs.python.org/3/library/string.html).
+        Eine vollständige Einführung in Strings finden Sie in der [offiziellen Dokumentation] (https://docs.python.org/3/library/string.html).
         """
     )
     return

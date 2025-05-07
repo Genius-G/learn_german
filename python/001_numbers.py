@@ -25,9 +25,9 @@ def _(mo):
         Python hat mehrere Arten von Zahlen:
 
         ```python
-        integer = 42 # ganze Zahlen (int)
-        decimal = 3.14 # Fließkommazahlen (float)
-        complex_num = 2 + 3j # komplexe Zahlen
+        integer = 42            # ganze Zahlen (int)
+        decimal = 3.14          # Fließkommazahlen (float)
+        complex_num = 2 + 3j    # komplexe Zahlen
         ```
 
         Im Folgenden findest du ein Zahlenbeispiel, mit dem wir die Operationen erkunden können.
@@ -229,10 +229,10 @@ def _(mo):
     ## Nächste Schritte:
 
     - Verschiedene mathematische Operationen üben
-    - Experimentieren Sie mit Typkonvertierungen
-    - Probieren Sie die Funktionen des mathematischen Moduls aus
+    - Experimentiere mit Typkonvertierungen
+    - Probiere die Funktionen des `math` Moduls aus
 
-    Rechnen Sie weiter! 🧮✨
+    Rechne weiter! 🧮✨
     """)
     return
 

@@ -15,13 +15,13 @@ app = marimo.App()
 def _(mo):
     mo.md(
         """
-        # 🧩 Functions
+        # 🧩 Funktionen
 
-        This tutorial is about an important topic: **functions.**
+        In diesem Tutorium geht es um ein wichtiges Thema: **Funktionen.**
 
-        A function is a reusable block of code, similar in spirit to a mathematical function. Each function has a **name**, and accepts some number of **arguments**. These arguments are used in the function "body" (its block of code), and each function can **return** values.
+        Eine Funktion ist ein wiederverwendbarer Code-Block, ähnlich wie eine mathematische Funktion. Jede Funktion hat einen **Namen** und akzeptiert eine bestimmte Anzahl von **Argumenten**. Diese Argumente werden im „Körper“ der Funktion (ihrem Codeblock) verwendet, und jede Funktion kann Werte **zurückgeben**.
 
-        **Example.** Below is an example function.
+        **Beispiel** Nachfolgend findest eine Beispielfunktion.
         """
     )
     return
@@ -30,13 +30,13 @@ def _(mo):
 @app.cell
 def _():
     def greet(your_name):
-        return f"Hello, {your_name}!"
+        return f"Hallo, {your_name}!"
     return (greet,)
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""The keyword `def` starts the function definition. The function's **name** is `greet`. It accepts one **argument** called `your_name`. It then creates a string and **returns** it.""")
+    mo.md(r"""Das Schlüsselwort `def` leitet die Funktionsdefinition ein. Der **Name** der Funktion ist `greet`. Diese akzeptiert eine **Eingabe** namens `your_name`. Sie erzeugt dann eine Zeichenkette und **gibt** sie zurück.""")
     return
 
 
@@ -44,9 +44,9 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-        In the next cell, we **call** the function with a value and assign its return value to a variable.
+        In der nächsten Zelle **rufen** wir die Funktion mit einem Wert auf und weisen ihren Rückgabewert einer Variablen zu.
 
-        **Try it!** Try changing the input to the function.
+        **Versuchen Sie es!** Versuchen Sie, die Eingabe für die Funktion zu ändern.
         """
     )
     return
@@ -54,7 +54,7 @@ def _(mo):
 
 @app.cell
 def _(greet):
-    greeting = greet(your_name="<your name here>")
+    greeting = greet(your_name="<Dein Name hier>")
     greeting
     return (greeting,)
 
@@ -63,11 +63,11 @@ def _(greet):
 def _(mo):
     mo.md(
         """
-        **Why use functions?** Functions help you:
+        **Warum Funktionen verwenden?** Funktionen helfen dir:
 
-        - Break down complex problems
-        - Create reusable code blocks
-        - Improve code readability
+        - Komplexe Probleme aufzuschlüsseln
+        - Wiederverwendbare Code-Blöcke zu erstellen
+        - die Lesbarkeit des Codes zu verbessern
         """
     )
     return
@@ -77,8 +77,8 @@ def _(mo):
 def _(mo):
     mo.md(
         """
-        ## Default parameters
-        Make your functions more flexible by providing default values.
+        ## Standardparameter
+        Erhöhen Sie die Flexibilität Ihrer Funktionen, indem Sie Standardwerte vorgeben.
         """
     )
     return
@@ -87,7 +87,7 @@ def _(mo):
 @app.cell
 def _():
     def create_profile(name, age=18):
-        return f"{name} is {age} years old"
+        return f"{name} ist {age} Jahre alt"
     return (create_profile,)
 
 
@@ -102,7 +102,7 @@ def _(create_profile):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md("""You can also create functions that reference variables outside the function body. This is called 'closing over' variables""")
+    mo.md("""Du kannst auch Funktionen erstellen, die auf Variablen außerhalb des Funktionskörpers verweisen. Dies wird „Schließen über“ Variablen genannt""")
     return
 
 
@@ -112,10 +112,10 @@ def _():
 
     def multiplier(x):
         """
-        Create a function that multiplies input by a base value.
+        Erstelle eine Funktion, die die Eingabe mit einem Basiswert multipliziert.
 
-        This demonstrates how functions can 'close over' 
-        values from their surrounding scope.
+        Dies demonstriert, wie Funktionen Werte 
+        aus dem sie umgebenden Bereich übernehmen können.
         """
         return x * base_multiplier
     return base_multiplier, multiplier
@@ -131,10 +131,9 @@ def _(multiplier):
 def _(mo):
     mo.md(
         """
-        ## Returning multiple values
+        ## Rückgabe mehrerer Werte
 
-        Functions can return multiple values: just separate the values to return by
-        commas. Check out the next cell for an example.
+        Funktionen können mehrere Werte zurückgeben: Trenne einfach die zurückzugebenden Werte durch Kommata. In der nächsten Zelle findest du ein Beispiel.
         """
     )
     return
@@ -144,22 +143,22 @@ def _(mo):
 def _():
     def weather_analysis(temp):
         """
-        Analyze weather based on temperature.
+        Analysiert das Wetter anhand der Temperatur.
 
         Args:
-            temp (float): Temperature in Celsius
+            temp (float): Temperatur in Celsius
 
-        Returns:
-            tuple: Weather status, recommendation, warning level
+        Rückgabe:
+            Tupel: Wetterstatus, Empfehlung, Warnstufe
         """
         if temp <= 0:
-            return "Freezing", "Wear heavy coat", "High"
+            return "Eiskalt", "Treage besser eine warme Jacke", "Hoch"
         elif 0 < temp <= 15:
-            return "Cold", "Layer up", "Medium"
+            return "Kalt", "Warm anziehen", "Medium"
         elif 15 < temp <= 25:
-            return "Mild", "Comfortable clothing", "Low"
+            return "Mild", "Bequeme Klamotten", "Niedrig"
         else:
-            return "Hot", "Stay hydrated", "High"
+            return "Heiß", "Trink ausreichend Wasser", "Hoch"
     return (weather_analysis,)
 
 

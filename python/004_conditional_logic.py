@@ -15,22 +15,22 @@ app = marimo.App()
 def _(mo):
     mo.md(
         """
-        # 🔄 Conditional logic
+        # 🔄 Bedingte Logik
 
-        This tutorial teaches you how to how to make **decisions** in your code, using
-        Python's conditional statements.
+        In diesem Lernprogramm lernst du, wie du **Entscheidungen** in deinem Code treffen kannst, indem du
+        Pythons bedingte Anweisungen verwenden.
 
-        ## If Statements
-        The foundation of decision-making in Python:
+        ## If-Anweisungen
+        Die Grundlage der Entscheidungsfindung in Python:
         ```python
-        if condition:
-            # code to run if condition is True
-        elif another_condition:
-            # code to run if another_condition is True
+        if Bedingung:
+            # Code, der ausgeführt wird, wenn die Bedingung wahr ist
+        elif andere_Bedingung:
+            # Code, der ausgeführt wird, wenn eine andere_Bedingung wahr ist
         else:
-            # code to run if no conditions are True
+            # Code, der ausgeführt wird, wenn keine Bedingung wahr ist
         ```
-        Let's explore with some examples:
+        Schauen wir uns einige Beispiele an:
         """
     )
     return
@@ -38,7 +38,7 @@ def _(mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md("""**Try it!** Try changing the value of `42` below, and see how the output changes.""")
+    mo.md("""**Versuchen Sie es!** Versuchen Sie, den Wert von „42“ unten zu ändern und sehen Sie, wie sich die Ausgabe ändert.""")
     return
 
 
@@ -52,13 +52,13 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        Compare numbers using operators like
+        Vergleiche die Zahlen mit Operatoren wie
 
         - `>`
         - `>=`
         - `<`
         - `<=`
-        - `==`  (note the two equal signs!)
+        - `==` (beachte die beiden Gleichheitszeichen!)
         """
     )
     return
@@ -67,11 +67,11 @@ def _(mo):
 @app.cell
 def _(mo, number):
     if number > 42:
-        result = "Greater than 42"
+        result = "Größer als 42"
     elif number == 42:
-        result = "Equal to 42!"
+        result = "Gleich 42!"
     else:
-        result = "Less than 42"
+        result = "Kleiner als 42"
     mo.md(result)
     return (result,)
 
@@ -80,8 +80,8 @@ def _(mo, number):
 def _(mo):
     mo.md(
         r"""
-        ### Interactive decision making
-        **Try it!** Try changing the conditions below and see how the results change:
+        ### Interaktive Entscheidungsfindung
+        **Probiere es aus!** Ändere die untenstehenden Bedingungen und achte darauf, wie sich die Ergebnisse ändern:
         """
     )
     return
@@ -95,25 +95,25 @@ def _(mo, threshold, value):
 
 @app.cell(hide_code=True)
 def _(mo):
-    value = mo.ui.number(value=25, start=0, stop=100, label="Enter a number")
-    threshold = mo.ui.slider(value=50, start=0, stop=100, label="Set threshold")
+    value = mo.ui.number(value=25, start=0, stop=100, label="Eine Nummer eingeben")
+    threshold = mo.ui.slider(value=50, start=0, stop=100, label="Schwellenwert festlegen")
     return threshold, value
 
 
 @app.cell(hide_code=True)
 def _(mo, threshold, value):
     if value.value > threshold.value:
-        decision = f"{value.value} is greater than {threshold.value}"
+        decision = f"{value.value} größer ist als {threshold.value}"
     elif value.value == threshold.value:
-        decision = f"{value.value} is equal to {threshold.value}"
+        decision = f"{value.value} ist gleich {threshold.value}"
     else:
-        decision = f"{value.value} is less than {threshold.value}"
+        decision = f"{value.value} ist kleiner als {threshold.value}"
 
     mo.hstack(
         [
-            mo.md(f"**Decision**: {decision}"),
+            mo.md(f"**Entscheidung**: {decision}"),
             mo.md(
-                f"**Threshold cleared?**: {'✅' if value.value >= threshold.value else '❌'}"
+                f"**Schwelle überschritten? **: {'✅' if value.value >= threshold.value else '❌'}"
             ),
         ],
         justify="space-around",
@@ -125,14 +125,14 @@ def _(mo, threshold, value):
 def _(mo):
     mo.md(
         r"""
-        ## Boolean operations
-        Python uses boolean operators to combine conditions:
+        ## Boolesche Operationen
+        Python verwendet boolesche Operatoren, um Bedingungen zu kombinieren:
 
-        - `and`: Both conditions must be True
+        - `und`: Beide Bedingungen müssen wahr sein
 
-        - `or`: At least one condition must be True
+        - `oder`: Mindestens eine Bedingung muss wahr sein
 
-        - `not`: Inverts the condition
+        - nicht": Invertiert die Bedingung
         """
     )
     return
@@ -141,11 +141,11 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     _text = mo.md("""
-        - Try different combinations of age and ID status
-        - Notice how both conditions must be True to allow voting
-        - Experiment with edge cases (exactly 18, no ID, etc.)
+        - Probieren Sie verschiedene Kombinationen von Alter und Ausweisstatus aus
+        - Beachten Sie, dass beide Bedingungen wahr sein müssen, damit Sie wählen dürfen.
+        - Experimentieren Sie mit Sonderfällen (genau 18, kein Ausweis usw.)
     """)
-    mo.accordion({"💡 Experiment Tips": _text})
+    mo.accordion({"💡 Experimentiertipps": _text})
     return
 
 
@@ -157,8 +157,8 @@ def _(age, has_id, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    age = mo.ui.number(value=18, start=0, stop=120, label="Age")
-    has_id = mo.ui.switch(value=True, label="Has ID")
+    age = mo.ui.number(value=18, start=0, stop=120, label="Alter")
+    has_id = mo.ui.switch(value=True, label="Hat Ausweis")
     return age, has_id
 
 
@@ -167,20 +167,20 @@ def _(age, has_id, mo):
     can_vote = age.value >= 18 and has_id.value
 
     explanation = f"""
-    ### Voting eligibility check
+    ### Überprüfung der Wahlberechtigung
 
-    Current Status:
+    Aktueller Status:
 
-    - Age: {age.value} years old
+    - Alter: {age.value} Jahre alt
 
-    - Has ID: {"Yes" if has_id.value else "No"}
+    - Hat Ausweis: {"Ja" if has_id.value else "Nein"}
 
-    - Can Vote: {"Yes ✅" if can_vote else "No ❌"}
+    - Kann wählen gehen: {"Ja ✅" if can_vote else "Nein ❌"}
 
-    Reason: {
-        "Both age and ID requirements met"
+    Grund: {
+        "Alters- und Ausweisvoraussetzungen erfüllt"
         if can_vote
-        else "Missing " + ("required age" if age.value < 18 else "valid ID")
+        else "Kein " + ("erforderliches Alter erreicht" if age.value < 18 else "gültiger Ausweis")
     }
     """
 
@@ -190,7 +190,7 @@ def _(age, has_id, mo):
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md(r"""**Try it!** Write Python code that computes whether an individual can vote.""")
+    mo.md(r"""**Probiere es aus!** Schreibe Python-Code, der berechnet, ob eine Person wählen darf.""")
     return
 
 
@@ -210,19 +210,19 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Complex conditions
-        Combine multiple conditions for more sophisticated logic:
+        ## Komplexe Bedingungen
+        Kombiniere mehrere Bedingungen für eine komplexere Logik:
         ```python
-        # Multiple conditions
+        ## Mehrere Bedingungen
         if (age >= 18 and has_id) or has_special_permission:
-            print("Access granted")
+            print(„Zugriff gewährt“)
 
-        # Nested conditions
+        # Verschachtelte Bedingungen
         if age >= 18:
             if has_id:
-                print("Full access")
+                print(„Voller Zugang“)
             else:
-                print("Limited access")
+                print(„Eingeschränkter Zugang“)
         ```
         """
     )
@@ -237,9 +237,9 @@ def _(humidity, mo, temp, wind):
 
 @app.cell(hide_code=True)
 def _(mo):
-    temp = mo.ui.number(value=25, start=-20, stop=50, label="Temperature (°C)")
-    humidity = mo.ui.slider(value=60, start=0, stop=100, label="Humidity (%)")
-    wind = mo.ui.number(value=10, start=0, stop=100, label="Wind Speed (km/h)")
+    temp = mo.ui.number(value=25, start=-20, stop=50, label="Temperatur (°C)")
+    humidity = mo.ui.slider(value=60, start=0, stop=100, label="Luftfeuchtigkeit (%)")
+    wind = mo.ui.number(value=10, start=0, stop=100, label="Windstärke (km/h)")
     return humidity, temp, wind
 
 
@@ -249,17 +249,17 @@ def _(humidity, mo, temp, wind):
         conditions = []
 
         if temp.value > 30:
-            conditions.append("🌡️ High temperature")
+            conditions.append("🌡️ High Temperatur")
         elif temp.value < 10:
-            conditions.append("❄️ Cold temperature")
+            conditions.append("❄️ Kalte Temperatur")
 
         if humidity.value > 80:
-            conditions.append("💧 High humidity")
+            conditions.append("💧 Hohe Luftfeuchtigkeit")
         elif humidity.value < 30:
-            conditions.append("🏜️ Low humidity")
+            conditions.append("🏜️ Niedrige Luftfeuchtigkeit")
 
         if wind.value > 30:
-            conditions.append("💨 Strong winds")
+            conditions.append("💨 Starker Wind")
 
         return conditions
 
@@ -267,17 +267,17 @@ def _(humidity, mo, temp, wind):
     conditions = get_weather_advice()
 
     message = f"""
-    ### Weather analysis
+    ### Wetteranalyse
 
-    Current Conditions:
+    Aktuelle Bedingungen:
 
-    - Temperature: {temp.value}°C
+    - Temperatur: {temp.value}°C
 
-    - Humidity: {humidity.value}%
+    - Luftfeuchtigkeit: {humidity.value}%
 
-    - Wind Speed: {wind.value} km/h
+    - Windstärke: {wind.value} km/h
 
-    Alerts: {", ".join(conditions) if conditions else "No special alerts"}
+    Warnungen: {",".join(conditions) if conditions else "Keine Warnungen"}
     """
 
     mo.md(message)
@@ -287,11 +287,11 @@ def _(humidity, mo, temp, wind):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md("""
-    ## Next steps
+    ## Nächste Schritte
 
-    - Practice combining multiple conditions
-    - Explore nested if statements
-    - Try creating your own complex decision trees
+    - Übe die Kombination mehrerer Bedingungen
+    - Verschachtelte if-Anweisungen erforschen
+    - Versuche deine eigenen komplexen Entscheidungsbäume zu erstellen
 
     Keep coding! 🎯✨
     """)

@@ -15,24 +15,24 @@ app = marimo.App()
 def _(mo):
     mo.md(
         """
-        # 🔄 Loops
+        # 🔄 Schleifen
 
-        Let's learn how Python helps us repeat tasks efficiently with loops.
+        Wir wollen lernen, wie Python uns hilft, Aufgaben mit Schleifen effizient zu wiederholen.
 
-        A "loop" is a way to execute a block of code multiple times. Python has two 
-        main types of loops:
+        Eine „Schleife“ ist eine Möglichkeit, einen Codeblock mehrmals auszuführen. Python hat zwei 
+        Haupttypen von Schleifen:
 
         ```python
-        # For loop: when you know how many times to repeat
+        # For-Schleife: wenn man weiß, wie oft man wiederholen muss
         for i in range(5):
             print(i)
 
-        # While loop: when you don't know how many repetitions
-        while condition:
+        # While-Schleife: wenn man nicht weiß, wie viele Wiederholungen
+        while Bedingung:
             do_something()
         ```
 
-        Let's start with a simple list to explore loops. Feel free to modify this list and see how the subsequent outputs change.
+        Beginnen wir mit einer einfachen Liste, um Schleifen zu untersuchen. Du kannst diese Liste beliebig verändern und sehen, wie sich die nachfolgenden Ausgaben ändern.
         """
     )
     return
@@ -48,10 +48,10 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## The for loop
+        ## Die for-Schleife
 
-        The for loop is perfect for iterating over sequences.
-        Try changing the `sample_fruits` list above and see how the output changes.
+        Die for-Schleife ist perfekt für die Iteration über Sequenzen.
+        Versuche die obige Liste „sample_fruits“ zu ändern und achte darauf, wie sich die Ausgabe ändert.
         """
     )
     return
@@ -68,9 +68,9 @@ def _(sample_fruits):
 def _(mo):
     mo.md(
         """
-        ### Getting the position of an item
+        ### Ermitteln der Position eines Eintrags
 
-        When you need both the item and its position, use `enumerate()`:
+        Wenn Sie sowohl das Element als auch seine Position benötigen, verwenden Sie „enumerate()“:
         """
     )
     return
@@ -87,9 +87,9 @@ def _(sample_fruits):
 def _(mo):
     mo.md(
         """
-        ### Iterating over a range of numbers
+        ### Iterieren über eine range (Bereich) von Zahlen
 
-        `range()` is a powerful function for generating sequences of numbers:
+        range() ist eine leistungsfähige Funktion zur Erzeugung von Zahlenfolgen:
         """
     )
     return
@@ -114,9 +114,9 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## The `while` loop
+        ## Die „while“-Schleife
 
-        While loops continue as long as a condition is `True`.
+        While-Schleifen werden so lange fortgesetzt, wie eine Bedingung `True` ist.
         """
     )
     return
@@ -135,15 +135,15 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Controlling loop execution
+        ## Kontrolle der Schleifenausführung
 
-        Python provides several ways to control loop execution:
+        Python bietet mehrere Möglichkeiten, die Ausführung von Schleifen zu steuern:
 
-        - `break`: exit the loop immediately
+        - `break`: die Schleife sofort verlassen
 
-        - `continue`: skip to the next iteration
+        - `continue`: zur nächsten Iteration übergehen
 
-        These can be used with both `for` and `while` loops.
+        Diese können sowohl mit `for`- als auch mit `while`-Schleifen verwendet werden.
         """
     )
     return
@@ -153,7 +153,7 @@ def _(mo):
 def _():
     for _i in range(1, 6):
         if _i == 4:
-            print("Breaking out of the loop.")
+            print("Aus der Schleife ausbrechen.")
             break
         print(_i)
     return
@@ -172,24 +172,24 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Practical loop patterns
+        ## Praktische Schleifenmuster
 
-        Here are some common patterns you'll use with loops:
+        Hier sind einige gängige Muster, die du mit Schleifen verwenden kannst:
 
         ```python
-        # Pattern 1: Accumulator
+        ## Muster 1: Akkumulator
         value = 0
         for num in [1, 2, 3, 4, 5]:
             value += num
 
-        # Pattern 2: Search
+        # Muster 2: Suche
         found = False
         for item in items:
             if condition:
                 found = True
                 break
 
-        # Pattern 3: Filter
+        # Muster 3: Filter
         filtered = []
         for item in items:
             if condition:
@@ -204,9 +204,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        ## Next steps
+        ## Nächste Schritte
 
-        Check out the official [Python docs on loops and control flow](https://docs.python.org/3/tutorial/controlflow.html).
+        Lies die offiziellen [Python-Dokumente zu Schleifen und Kontrollfluss] (https://docs.python.org/3/tutorial/controlflow.html).
         """
     )
     return

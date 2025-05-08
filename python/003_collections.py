@@ -15,20 +15,20 @@ app = marimo.App(width="medium")
 def _(mo):
     mo.md(
         """
-        # 📦 Collections
+        # 📦 Sammlungen
 
-        A "collection" is a type of variable that holds multiple values.
+        Eine „Sammlung“ ist eine Art von Variable, die mehrere Werte enthält.
 
-        ## Lists
-        Lists are ordered, mutable sequences. Create them using square brackets:
+        ## Listen
+        Listen sind geordnete, veränderbare Sequenzen. Sie werden mit eckigen Klammern erstellt:
 
         ```python
-        fruits = ["apple", "banana", "orange"]
-        numbers = [1, 2, 3, 4, 5]
-        mixed = [1, "hello", 3.14, True]
+        Früchte = [„Apfel“, „Banane“, „Orange“]
+        Zahlen = [1, 2, 3, 4, 5]
+        gemischt = [1, „hallo“, 3.14, Wahr]
         ```
 
-        Below is an example list we'll use to explore operations.
+        Im Folgenden findest du eine Beispielauflistung, mit der wir die Operationen erkunden wollen
         """
     )
     return
@@ -44,11 +44,11 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## List operations
+        ## Listenoperationen
 
-        Here are common operations you can perform on lists.
+        Hier sind allgemeine Operationen, die du mit Listen durchführen kannst.
 
-        Try changing the values in `sample_list` above and watch the results change.
+        Versuche die Werte in `sample_list` oben zu ändern und beobachte, wie sich die Ergebnisse ändern.
         """
     )
     return
@@ -56,26 +56,26 @@ def _(mo):
 
 @app.cell
 def _(sample_list):
-    len(sample_list)  # List length
+    len(sample_list)  # Länge der Liste
     return
 
 
 @app.cell
 def _(sample_list):
-    extended_list = sample_list + [6]  # Concatenate two lists
+    extended_list = sample_list + [6]  # Zwei Listen miteinander verknüpfen
     extended_list
     return (extended_list,)
 
 
 @app.cell
 def _(extended_list):
-    extended_list[0]  # Access first element
+    extended_list[0]  # Zugriff auf das erste Element
     return
 
 
 @app.cell
 def _(extended_list):
-    extended_list[-1]  # Access last element
+    extended_list[-1]  # Zugriff auf das letzte Element
     return
 
 
@@ -83,9 +83,9 @@ def _(extended_list):
 def _(mo):
     mo.md(
         """
-        ## Tuples
+        ## Tupel
 
-        Tuples are immutable sequences. They're like lists that can't be changed after creation:
+        Tupel sind unveränderliche Sequenzen. Sie sind wie Listen, die nach der Erstellung nicht mehr geändert werden können:
         """
     )
     return
@@ -99,14 +99,14 @@ def _():
 
 @app.cell
 def _(coordinates):
-    x, y = coordinates  # Tuple unpacking
+    x, y = coordinates  # Entpacken von Tupeln
     x
     return x, y
 
 
 @app.cell(hide_code=True)
 def _(mo):
-    mo.md("""#### Tuple concatenation""")
+    mo.md("""#### Tupel-Verkettung""")
     return
 
 
@@ -124,9 +124,9 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Dictionaries
+        ## Dictionaries (Wörterbuch)
 
-        Dictionaries store key-value pairs. They're perfect for mapping relationships:
+        Dictionaries speichern Schlüssel-Werte-Paare. Sie sind perfekt für die Abbildung von Beziehungen:
         """
     )
     return
@@ -134,25 +134,25 @@ def _(mo):
 
 @app.cell
 def _():
-    person = {"name": "John Doe", "age": 25, "city": "New York"}
+    person = {"name": "Max Mustermann", "age": 25, "city": "Berlin"}
     return (person,)
 
 
 @app.cell
 def _(person):
-    person["name"]  # Access value by key
+    person["name"]  # Zugriff auf Wert nach Schlüssel
     return
 
 
 @app.cell
 def _(person):
-    person.keys()  # Get all keys
+    person.keys()  # Alle Schlüssel abrufen
     return
 
 
 @app.cell
 def _(person):
-    person.values()  # Get all values
+    person.values()  # Alle Werte abrufen
     return
 
 
@@ -160,9 +160,9 @@ def _(person):
 def _(mo):
     mo.md(
         """
-        ## Sets
+        ## Sets (Mengen)
 
-        Sets are unordered collections of unique elements:
+        Sets sind ungeordnete Sammlungen von eindeutigen Elementen:
         """
     )
     return
@@ -170,19 +170,19 @@ def _(mo):
 
 @app.cell
 def _():
-    numbers_set = {1, 2, 3, 3, 2, 1}  # Duplicates are removed
+    numbers_set = {1, 2, 3, 3, 2, 1}  # Duplikate werden entfernt.
     return (numbers_set,)
 
 
 @app.cell
 def _(numbers_set):
-    numbers_set | {4}  # Add a new element
+    numbers_set | {4}  # Ein neues Element hinzufügen
     return
 
 
 @app.cell
 def _():
-    {1, 2, 3} & {3, 4, 5}  # Find common elements
+    {1, 2, 3} & {3, 4, 5}  # Gemeinsame Elemente finden
     return
 
 
@@ -190,28 +190,28 @@ def _():
 def _(mo):
     mo.md(
         """
-        ## Collection methods and operations
+        ## Methoden und Operationen von Sammlungen
 
-        Here are some common operations across collections:
+        Hier sind einige allgemeine Operationen für Sammlungen:
 
         ```python
-        # Lists
-        my_list = [1, 2, 3]
-        my_list.insert(0, 0)     # Insert at position
-        my_list.remove(2)        # Remove first occurrence
-        my_list.sort()           # Sort in place
-        sorted_list = sorted(my_list)  # Return new sorted list
+        ## Listen
+        meine_liste = [1, 2, 3]
+        my_list.insert(0, 0) # An Position einfügen
+        my_list.remove(2) # Erstes Vorkommen entfernen
+        my_list.sort() # An Ort und Stelle sortieren
+        sortierte_liste = sortiert(meine_liste) # Neue sortierte Liste zurückgeben
 
         # Dictionaries
-        my_dict = {"a": 1}
-        my_dict.update({"b": 2})  # Add new key-value pairs
-        my_dict.get("c", "Not found")  # Safe access with default
+        my_dict = {„a“: 1}
+        my_dict.update({„b“: 2}) # Neue Schlüssel-Werte-Paare hinzufügen
+        my_dict.get(„c“, „Nicht gefunden“) # Sicherer Zugriff mit Standard
 
         # Sets
         set_a = {1, 2, 3}
         set_b = {3, 4, 5}
-        set_a.union(set_b)       # Combine sets
-        set_a.difference(set_b)  # Elements in A but not in B
+        set_a.union(set_b) # Mengen kombinieren
+        set_a.difference(set_b) # Elemente in A, aber nicht in B
         ```
         """
     )
@@ -222,9 +222,9 @@ def _(mo):
 def _(mo):
     mo.md(
         r"""
-        ## Documentation
+        ## Dokumentation
 
-        See the official [Python tutorial on data structures](https://docs.python.org/3/tutorial/datastructures.html) for more in-depth information.
+        Ausführlichere Informationen finden Sie im offiziellen [Python-Tutorial über Datenstrukturen] (https://docs.python.org/3/tutorial/datastructures.html).
         """
     )
     return
